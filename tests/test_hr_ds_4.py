@@ -6,9 +6,9 @@ automated test script for hackerrank_ds_4.py
 """
 # import sys
 # sys.path.append('E:/Github/CICD-intro/code')
-import unittest
 
-from CICDIntro.code.hackerrank_DS_4 import rotateLeft
+from code import hackerrank_DS_4  #as hrds4
+import unittest
 
 
 class test(unittest.TestCase):
@@ -19,10 +19,11 @@ class test(unittest.TestCase):
         """
         d = 1
         arr = [1,3,5,7]
-        result = hrds4.rotateLeft(d, arr)
+        result = hackerrank_DS_4.rotateLeft(d, arr)
         self.assertEqual(result, [3, 5, 7, 1])
 
 
 if __name__ == "main":
+    print("code start")
     unittest.main()
 
