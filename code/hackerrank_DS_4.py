@@ -39,4 +39,4 @@ if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
 
     result = rotateLeft(d, arr)
-	print("result: "+str(result))
+    print("result: "+str(result))
