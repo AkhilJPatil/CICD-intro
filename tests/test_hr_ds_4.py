@@ -31,6 +31,19 @@ class test(unittest.TestCase):
         result = hackerrank_DS_4.rotateLeft(d, arr)
         self.assertEqual(result, [16, 17, 18, 19, 20, 21, 22, 23, 24, 11, 12, 13, 14, 15])
 
+    def test_large_pos3(self):
+        """
+        test to rotate a large array by 3 position
+        :return:
+        """
+        d = 3
+        arr = list(i for i in range(-10, 51))  # list from -10 to 50
+        result = hackerrank_DS_4.rotateLeft(d, arr)
+        arr2 = list(i for i in range(-7, 51))
+        arr2.extend((-10,-9,-8))
+        self.assertEqual(result, arr2)
+
+
 if __name__ == "main":
     print("code start")
     unittest.main()
