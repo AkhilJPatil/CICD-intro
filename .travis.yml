@@ -2,5 +2,4 @@ language: Python
 Python:
   - "3.5"
 script:
-  - python -m unittest test_hr_ds_4.py
-  - python -m unittest -v
+  - python -m unittest -v tests/test_hr_ds_4.py
