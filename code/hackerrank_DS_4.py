@@ -30,7 +30,7 @@ def rotateLeft(d, arr):
     return temp
 
 
-if __name__ == '__main__':
+def rotation():
     first_multiple_input = input().rstrip().split()
 
     n = int(first_multiple_input[0])
@@ -39,4 +39,9 @@ if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
 
     result = rotateLeft(d, arr)
-    print("result: "+str(result))
+    return result
+
+
+if __name__ == '__main__':
+
+    print(rotation())
