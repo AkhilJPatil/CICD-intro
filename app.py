@@ -8,25 +8,38 @@ flask wraper for rotate left functionality script - hackerrank_DS_4.py
 """
 
 import os
-from flask import Flask
+from flask import Flask, render_template, request, redirect
 from code import hackerrank_DS_4
 
 app = Flask(__name__)
 
-@app.route("/")
-def hrds4():
-    page = '<html><body><h1>'
-    page += 'Rotating the array to LEFT</h1><div>'
-    page += '<input type="text" id="arr-len">' \
-            '<br><input type="text" id="shift">' \
-            '<br><label for="body" id="desc">space separated list of array members</label>' \
-            '<input type="text" id="arr">' \
-            '<br><button>Submit</button>' \
-            '</div></body></html>'
-    return page
+# class model():
 
+
+@app.route("/", methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        shift = request.form['shift']
+        arr = request.form['arr']
+        try:
+            arr = list(map(int, arr.rstrip().split()))
+            res = hackerrank_DS_4.rotateLeft(int(shift), arr)
+            return render_template('output.html', res=str(res))
+        except Exception as e:
+            return "Error "+str(e)
+        # return redirect('/')
+    else:
+        return render_template('index.html')
+
+
+@app.route("/output/", methods=['GET'])
+def back():
+    try:
+        return redirect("/")
+    except Exception as e:
+        return str(e)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=False)
 
 

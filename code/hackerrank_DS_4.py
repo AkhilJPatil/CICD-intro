@@ -26,7 +26,7 @@ def rotateLeft(d, arr):
         else:
             temp.append(arr[i + d])
 
-    print(temp)
+    # print(temp)
     return temp
 
 
