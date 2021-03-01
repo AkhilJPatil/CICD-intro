@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Rotator | Home</title>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/main.css') }}">
     </head>
     <body>
         <h1>Rotating the array to LEFT</h1>
@@ -14,10 +15,10 @@
                 <label for="lb-shift">Shift array by:</label>
                 <input type="text" name="shift" id="shift">
                 <br>
-                <label for="body" id="desc">Space separated list of array members</label>
+                <label for="lb-array">Number array (Space separated):</label>
                 <input type="text" name="arr" id="arr">
                 <br>
-                <input type="submit" value="Rotate">
+                <button>Rotate Left</button>
             </form>
         </div>
     </body>

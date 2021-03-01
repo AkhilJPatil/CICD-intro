@@ -8,7 +8,7 @@ flask wraper for rotate left functionality script - hackerrank_DS_4.py
 """
 
 import os
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from code import hackerrank_DS_4
 
 app = Flask(__name__)
@@ -26,7 +26,7 @@ def index():
             res = hackerrank_DS_4.rotateLeft(int(shift), arr)
             return render_template('output.html', res=str(res))
         except Exception as e:
-            return "Error "+str(e)
+            return render_template('404.html', err="Error "+str(e))
         # return redirect('/')
     else:
         return render_template('index.html')
@@ -38,6 +38,9 @@ def back():
         return redirect("/")
     except Exception as e:
         return str(e)
+
+
+# @app.route("/")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=False)

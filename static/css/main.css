@@ -1,0 +1,20 @@
+body{
+    margin:10px;
+    font-family: cursive;
+}
+
+label, input {
+    margin-bottom:10px;
+    border-radius: 5px;
+}
+
+button{
+    margin-top: 20px;
+    background: black;
+    color: white;
+    padding: 6px;
+    border: 2;
+    border-radius: 5px;
+    font-size: 2em;
+    cursor: pointer;
+}
