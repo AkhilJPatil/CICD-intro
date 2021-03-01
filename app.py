@@ -23,7 +23,11 @@ def index():
         arr = request.form['arr']
         try:
             arr = list(map(int, arr.rstrip().split()))
-            res = hackerrank_DS_4.rotateLeft(int(shift), arr)
+            if request.form.get("btn_rot_lf"):
+                res = hackerrank_DS_4.rotateLeft(int(shift), arr)
+            else:  # request.form.get("btn_rot_rt"):
+                res = hackerrank_DS_4.rotateRight(int(shift), arr)
+
             return render_template('output.html', res=str(res))
         except Exception as e:
             return render_template('404.html', err="Error "+str(e))

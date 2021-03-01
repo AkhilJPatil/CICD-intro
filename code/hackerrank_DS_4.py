@@ -30,6 +30,15 @@ def rotateLeft(d, arr):
     return temp
 
 
+def rotateRight(d, arr):
+    temp = []
+    for i in range(len(arr)-d,len(arr)-d+len(arr)):
+        temp.append(arr[i % len(arr)])
+
+    # print(temp)
+    return temp
+
+
 def rotation():
     first_multiple_input = input().rstrip().split()
 
