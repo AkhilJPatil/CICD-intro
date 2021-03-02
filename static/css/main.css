@@ -11,7 +11,7 @@ label, input {
 button{
     margin-top: 20px;
     background: black;
-    color: white;
+    color: blue;
     padding: 6px;
     border: 2;
     border-radius: 5px;
@@ -21,4 +21,13 @@ button{
 
 table, td, th {
     border: 1px solid #aaa;
+}
+
+td{
+    text-align: center;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
 }

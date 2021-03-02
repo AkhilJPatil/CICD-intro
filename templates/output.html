@@ -23,22 +23,30 @@
         <p id="resultp">{{res}}</p>
     </div>
     <div>
-        <table>
+        <table style="width:90%; text-align:center">
             <colgroup>
-                <col style="width:40%">
+                <col style="width:10%">
+                <col style="width:30%">
                 <col style="width:10%">
                 <col style="width:10%">
-                <col style="width:40%">
+                <col style="width:30%">
             </colgroup>
             <tr>
+                <th>Date</th>
                 <th>Input array</th>
                 <th>Rotation by</th>
                 <th>Rotation direction</th>
                 <th>Output array</th>
             </tr>
-            <tr>
-
-            </tr>
+            {% for rec in recs %}
+                <tr>
+                    <td>{{ rec.date }}</td>
+                    <td>{{ rec.ip_arr }}</td>
+                    <td>{{ rec.rotation_by }}</td>
+                    <td>{{ rec.rotation_direction }}</td>
+                    <td>{{ rec.op_arr }}</td>
+                </tr>
+            {% endfor %}
         </table>
     </div>
     <div>
